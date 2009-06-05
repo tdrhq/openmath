@@ -14,9 +14,10 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "dbgapi.h"
 #ifndef STACKAR_H
 #define STACKAR_H
+
+#include "dbgapi.h"
 //#ifndef min
 inline int min(int x, int y){ return (x<y?x:y) ; }
 //#define min _min

@@ -38,12 +38,12 @@ public:
 
 };
 template<class MAPFROM, class MAPTO>
-Map::Map()
+Map<MAPFROM,MAPTO>::Map()
 {
 }
 
 template<class MAPFROM, class MAPTO>
-Map::~Map()
+Map<MAPFROM,MAPTO>::~Map()
 {
 }
 
