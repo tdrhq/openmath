@@ -22,11 +22,7 @@
 #include "my_string.h"
 #include "tpdefs.h"
 
-extern void convert_to_components(COMPONENTAR &component, 
-	const char *str);
 	
-extern void convert_to_postfix(POSTFIX &postfix,
-	const char *str);
 	
 extern void reverse_stack(StringStack &from, StringStack &to);
 
@@ -52,9 +48,10 @@ class expression {
 	POSTFIX m_postfix;
         //_expr *expr;  //every expression is related to the postfix at load time.
 public: 
+	void convert_to_components(COMPONENTAR &component); 
 	expression();
+	void convert_to_postfix(POSTFIX &pos);
 	~expression();
- 
   	void set(const char *str);
   	/** No descriptions */
   	

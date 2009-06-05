@@ -16,6 +16,13 @@
 #include <ctype.h>
 #include <stdio.h>
 #include "world.h"
+#include <stdlib.h>
+
+bool is_literal_char(const char ch);
+
+bool is_operator(const char *s);
+
+bool is_oper_char(const char ch);
 
 void reverse_stack(StringStack &from, StringStack &to){
 	while(from.get_top_position()){
@@ -81,7 +88,7 @@ void expression::convert_to_components(COMPONENTAR &component)
 		}
 		else{
                    	if(*p=='-' && isdigit(p[1])){
-				if(component.get_last=="(" 
+				if(component.get_last ()=="(" 
 				||is_operator(component.get_last())){
 					cur+=*p;
 					p++;
@@ -119,9 +126,8 @@ void expression::convert_to_components(COMPONENTAR &component)
                         
         
 }
-#ifndef NEWVER
 
-#ifdef NEWVER 
+#ifdef NEWVER
 struct _basic_oper_defn{
 	char *name;
 	int priority;
@@ -148,9 +154,11 @@ _basic_oper_defn * _bo_findoper(const char *text)
 }
 	
 	/** No descriptions */
-int _ctp_get_oper_pref(const char *s){
+int _ctp_get_oper_pref(const char ch){
+	char s[2] = "1";
+	s[0] =ch;
 
-	_basic_oper_defn *p=_bo_findoper(ch);	
+	_basic_oper_defn *p=_bo_findoper(s);	
 	if(!p){
 		THROW();
 		return -0xff;
@@ -159,9 +167,12 @@ int _ctp_get_oper_pref(const char *s){
 	
 
 }
-bool _ctp_is_oper_righttoleft(const char *ch)  
+bool _ctp_is_oper_righttoleft(const char ch)  
 {
-	_basic_oper_defn *p=_bo_findoper(ch);
+	char s[2] = "1";
+	s[0] = ch;
+
+	_basic_oper_defn *p=_bo_findoper(s);
 	if(!p){
 		THROW();
 		return false;
@@ -307,7 +318,7 @@ void expression::convert_to_postfix(POSTFIX &postfix)
 			assert(!isalpha(s[0]) && !isnum(s[0]) && s[0]!='%');
 			int pref=_ctp_get_oper_pref(s[0]);
 			int testpref;
-			bool rtol=_ctp_is_oper_righttoleft();
+			bool rtol=_ctp_is_oper_righttoleft(s[0]);
 			
                         if(oper_stack.getSize()>0) 
 				while(
