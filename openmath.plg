@@ -1,0 +1,74 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: openmath - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\WINDOWS\TEMP\RSPC040.TMP" with contents
+[
+/nologo /ML /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_CONSOLE" /D "_MBCS" /D "_NO_INTERNATIONAL_" /Fp"Release/openmath.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\openmath-0.1.2-Jan05\tornadomath\src\_expr.cpp"
+"E:\openmath-0.1.2-Jan05\tornadomath\src\_oper.cpp"
+"E:\openmath-0.1.2-Jan05\tornadomath\src\_oper_expr.cpp"
+"E:\openmath-0.1.2-Jan05\tornadomath\src\cmdparser.cpp"
+"E:\openmath-0.1.2-Jan05\tornadomath\src\expression_working.cpp"
+"E:\openmath-0.1.2-Jan05\tornadomath\src\main.cpp"
+"E:\openmath-0.1.2-Jan05\tornadomath\src\my_string.cpp"
+"E:\openmath-0.1.2-Jan05\tornadomath\src\session.cpp"
+"E:\openmath-0.1.2-Jan05\tornadomath\src\session_user.cpp"
+"E:\openmath-0.1.2-Jan05\tornadomath\src\tornadomath.cpp"
+"E:\openmath-0.1.2-Jan05\tornadomath\src\value.cpp"
+"E:\openmath-0.1.2-Jan05\tornadomath\src\value_double.cpp"
+"E:\openmath-0.1.2-Jan05\tornadomath\src\value_normal.cpp"
+"E:\openmath-0.1.2-Jan05\tornadomath\src\valuestack.cpp"
+"E:\openmath-0.1.2-Jan05\tornadomath\src\world.cpp"
+]
+Creating command line "cl.exe @C:\WINDOWS\TEMP\RSPC040.TMP" 
+Creating temporary file "C:\WINDOWS\TEMP\RSPC041.TMP" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:no /pdb:"Release/openmath.pdb" /machine:I386 /out:"Release/openmath.exe" 
+".\Release\_expr.obj"
+".\Release\_oper.obj"
+".\Release\_oper_expr.obj"
+".\Release\cmdparser.obj"
+".\Release\expression_working.obj"
+".\Release\main.obj"
+".\Release\my_string.obj"
+".\Release\session.obj"
+".\Release\session_user.obj"
+".\Release\tornadomath.obj"
+".\Release\value.obj"
+".\Release\value_double.obj"
+".\Release\value_normal.obj"
+".\Release\valuestack.obj"
+".\Release\world.obj"
+]
+Creating command line "link.exe @C:\WINDOWS\TEMP\RSPC041.TMP"
+<h3>Output Window</h3>
+Compiling...
+_expr.cpp
+_oper.cpp
+_oper_expr.cpp
+cmdparser.cpp
+expression_working.cpp
+main.cpp
+my_string.cpp
+session.cpp
+session_user.cpp
+tornadomath.cpp
+value.cpp
+value_double.cpp
+value_normal.cpp
+valuestack.cpp
+world.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+openmath.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

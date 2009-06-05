@@ -1,0 +1,59 @@
+/***************************************************************************
+ *   Copyright (C) 2004 by arnold j noronha                                *
+ *   arn_2000@rediffmail.com                                               *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, write to the                         *
+ *   Free Software Foundation, Inc.,                                       *
+ *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
+ ***************************************************************************/
+#ifndef EQN_SOLVER_H
+#define EQN_SOLVER_H
+
+/**
+@author arnold j noronha
+*/
+
+class eqn_solver{
+public:
+	REAL beg,end, tmp;
+	REAL beg_val, end_val, tmp_val;
+	
+	REAL tolerance;
+	
+	_expr *expr;
+	Value val;
+	/*generate a tmp using only beg and end*/
+	virtual bool get_next_point();
+	
+	/*decide where to put the tmpval, into beg or end*/
+	virtual bool iterator();
+	
+	/*loop iterator*/
+	virtual bool solve();
+public:
+    eqn_solver();
+    REAL eval(REAL a){
+    	expr->pargAr[0]=a;
+	
+	 expr->eval(val);
+	 return ((Value_real*) &val)->real;
+    }
+    
+    
+    ~eqn_solver();
+    bool  set(_oper_expr* poper);
+
+};
+
+#endif
