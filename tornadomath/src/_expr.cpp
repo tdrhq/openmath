@@ -19,7 +19,7 @@
 #include <ctype.h>
 #include "world.h"
 #include "expression.h"
-
+#include <stdlib.h>
 
 
 _expr::_expr(){

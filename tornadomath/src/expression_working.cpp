@@ -16,7 +16,7 @@
 #include <ctype.h>
 #include <stdio.h>
 #include "world.h"
-
+#include <stdlib.h>
 
 
 void reverse_stack(StringStack &from, StringStack &to){

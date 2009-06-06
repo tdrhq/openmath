@@ -22,6 +22,9 @@
 #endif
 
 
+#ifndef gettext
+#define gettext(a) (a)
+#endif
 
 #include "world.h"
 
